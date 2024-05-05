@@ -2,11 +2,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "fmt": "prettier --write ."
+    "dev": "astro dev"
   },
   "dependencies": {
     "@fontsource/open-sans": "^5.0.12",
