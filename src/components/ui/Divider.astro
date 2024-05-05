@@ -1,0 +1,33 @@
+---
+import { rem } from "@util/units/rem";
+
+/** Divider component from Discord */
+interface Props {
+  /** Top margin, 12 by default */
+  top?: number;
+  /** Bottom margin, 12 by default */
+  bottom?: number;
+}
+
+const { top, bottom } = Astro.props;
+---
+
+<hr class="divider" />
+<style
+  lang="sass"
+  define:vars={{
+    top: rem(top ?? 12),
+    bottom: rem(bottom ?? 12),
+  }}
+>
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/space"
+
+  .divider
+    background-color: colors.$divider
+    border: none
+
+    height: space.$xs-1
+    margin-top: var(--top)
+    margin-bottom: var(--bottom)
+</style>

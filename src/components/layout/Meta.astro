@@ -1,0 +1,12 @@
+---
+/** Minimalistic head meta data */
+interface Props {
+  /** Only title needed, defaults to display name (nickname) in main layout */
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<meta property="og:site_name" content="Profile card">
+<meta property="og:title" content={title}>
+<meta name="theme-color" content="#2B2D31">

@@ -1,0 +1,38 @@
+---
+import {
+  Image,
+  RemoteImageProps,
+} from "astro:assets";
+
+// Remove width, height & children from the origin component props,
+// instead pass size prop
+/** Rounded image with a set size using astro's image optimization component */
+type Props = Omit<
+  RemoteImageProps,
+  "width" | "height" | "slot" | "alt"
+> & {
+  /** Width & height of the avatar (aspect ratio is 1) */
+  size: number;
+};
+
+const { size, class: additionalClass, ...props } = Astro.props;
+---
+
+<Image
+  class:list={["avatar", additionalClass]}
+  alt="Avatar"
+  width={size}
+  height={size}
+  {...props}
+/>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/rounding"
+  @use "src/styles/theme/space"
+
+  .avatar
+    border-radius: rounding.$circle
+    border: rem(9) solid colors.$card
+    aspect-ratio: 1
+</style>

@@ -1,0 +1,22 @@
+/** All available connection types + removed skype connection */
+type Connection =
+  | "paypal"
+  | "reddit"
+  | "steam"
+  | "skype"
+  | "tiktok"
+  | "twitter"
+  | "ebay"
+  | "crunchyroll"
+  | "playstation-network"
+  | "spotify"
+  | "xbox"
+  | "battle-net"
+  | "epic-games"
+  | "facebook"
+  | "github"
+  | "instagram"
+  | "league-of-legends"
+  | "riot-games"
+  | "twitch"
+  | "youtube";

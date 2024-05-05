@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+
+/** Href only component, considered an image banner */
+interface HrefOnly {
+  /** Cannot pass color in image banner */
+  color?: never;
+  /** A link to a banner image, won't be stretched as object-fit: cover; is used */
+  href: string;
+}
+
+/** Color only component, considered a color banner */
+interface ColorOnly {
+  /** Color of the banner, height will be smaller comparing to image banner for obvious reasons */
+  color: string;
+  /** Cannot pass href in color banner */
+  href?: never;
+}
+
+/** A union of either color or image banner */
+type Props = HrefOnly | ColorOnly;
+
+const { href, color } = Astro.props;
+---
+
+<div class="upper">
+  {
+    href ? (
+      <Image
+        class:list={["image", "banner"]}
+        src={href}
+        width={600}
+        height={212}
+        alt="banner"
+      />
+    ) : (
+      <div class:list={["color", "banner"]} />
+    )
+  }
+</div>
+
+
+<style lang="sass" define:vars={{ color }}>
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/space"
+
+  .upper
+    box-sizing: border-box
+
+  .banner
+    margin: - space.$md-16
+    margin-bottom: space.$md-16
+    max-width: calc(100% + space.$lg-32)
+    aspect-ratio: 150 / 53
+
+  .color
+    background-color: var(--color)
+    width: calc(100% + space.$lg-32)
+    aspect-ratio: 300 / 53
+    height: rem(106)
+
+  .image
+    height: rem(212)
+    object-fit: cover
+
+    @media screen and (max-width: rem(500))
+      height: rem(170)
+    
+    @media screen and (max-width: rem(410))
+      height: rem(140)
+</style>

@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+/** "position: relative;" shorthand component */
+type Props = HTMLAttributes<'div'>;
+
+const { class: additionalClass, ...props } = Astro.props;
+---
+
+<div class:list={["relative", additionalClass]} {...props}>
+  <slot />
+</div>
+<style lang="sass">
+  .relative
+    position: relative
+</style>
