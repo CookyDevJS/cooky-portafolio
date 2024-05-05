@@ -42,7 +42,7 @@ connections:
     url: "https://instagram.com/sergiocm2009"
     verified: true
   spotify:
-    username: "Domin"
+    username: "escobamatos"
     url: "https://open.spotify.com/user/qzvkioir1rboe390cngafj94x"
     verified: true
   twitter:
