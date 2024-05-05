@@ -59,4 +59,4 @@ I'm work in **ADC Team**, [ChatAI](https://discord.gg/dfZaHBwptB), I am currentl
 
 I'm interested in gaming, studying and experimenting.
 
-i'm love listening to music.
+I'm love listening to music.
