@@ -49,6 +49,14 @@ connections:
     username: "CookyDev"
     url: "https://twitter.com/@CookyDev"
     verified: true
+  tiktok:
+    username: "sergiocm2009"
+    url: "https://tiktok.com/@sergiocm2009"
+    verified: true
+  riot-games:
+    username: "TPO Valorantelo#2866"
+    url: ""
+    verified: true
 ---
 
 <!-- Your About Me section -->
